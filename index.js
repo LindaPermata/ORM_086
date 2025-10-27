@@ -32,6 +32,15 @@ db.sequelize.sync()
         }
 });
 
+app.get('/komik', async (req, res) => {
+    try {
+        const komik = await db.Komik.findAll();
+        res.send(komiks);
+    } catch (err) {
+        res.send(err);
+    } 
+});
+
 
 
         
